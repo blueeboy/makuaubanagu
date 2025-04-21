@@ -289,7 +289,7 @@ footer {
   }
 
   .logo img {
-    width: 45px;
+    width: 40px;
   }
 
   .links {
@@ -365,7 +365,6 @@ footer {
   }
 
   .footer {
-    background-color: var(--secondary-color);
     color: var(--text-color);
     margin: 8em 3em 8em 3em;
     padding-bottom: 8em;
