@@ -334,3 +334,34 @@ nav {
     border-bottom: 2px solid var(--text-color);
   }
 }
+
+@media (max-width: 500px) {
+
+  header {
+    padding: 0 1em;
+  }
+
+  .logo img {
+    width: 140px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: -5em;
+  }
+  .work {
+    margin: 12em 1em 0 1em;
+    position: relative;
+  }
+
+
+  .footer {
+    margin: 8em 1em 8em 1em;
+    padding-bottom: 8em;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    position: relative;
+    gap: 3em;
+    border-bottom: 2px solid var(--text-color);
+  }
+}
+

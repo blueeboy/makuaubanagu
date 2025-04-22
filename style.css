@@ -121,7 +121,7 @@ main {
 }
 
 .about img {
-  width: 400px;
+  width: 70%;
   height: 500px;
   object-fit: cover;
   border-radius: 20px;
@@ -426,6 +426,7 @@ main .about p {
     width: 140px;
     height: 30px;
     object-fit: cover;
+    margin-left: -3em;
   }
   .links {
     display: flex;
@@ -479,6 +480,60 @@ main .about p {
   .footer {
     color: var(--text-color);
     margin: 8em 3em 8em 3em;
+    padding-bottom: 8em;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    position: relative;
+    gap: 3em;
+    border-bottom: 2px solid var(--text-color);
+  }
+}
+
+@media (max-width: 500px) {
+
+  header {
+    padding: 0 1em;
+  }
+
+  .logo img {
+    width: 140px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: -2em;
+  }
+
+  main {
+    padding: 0 1em;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  main .about p {
+    padding: 0em 0em 5em 0em;
+    font-size: var(--text-font-size-small);
+  }
+
+  .about img {
+    width: 100%;
+  }
+
+
+  .footer {
+    margin: 8em 1em 8em 1em;
     padding-bottom: 8em;
     display: grid;
     grid-template-columns: 1fr;
