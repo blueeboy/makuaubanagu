@@ -13,24 +13,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch&family=Rubik+Puddles&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
-    <link rel="shortcut icon" href="images/Frame 391.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/makua_logo.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="merch.css">
 </head>
 
 <body>
-    <div id="particles-js"></div>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="images/Frame 391.png" alt=""></a>
+            <a href="index.html" class="logo"><img src="images/makua_logo.jpeg" alt=""></a>
             <div class="links">
                 <a href="index.html">Home</a>
                 <a href="index.html#about">About</a>
                 <a href="works.html">Works</a>
-                <a href="merch.html" class="active">Merch</a>
+                <a href="merch.html" class="active" style="color: #fff;">Merch</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
 
+        <nav class="mobile-nav">
+            <a href="index.html" class="logo"><img src="images/makua_logo.jpeg" alt="" loading="lazy"></a>
+
+            <button class="hamburger" id="hamburger">
+              &#9776; <!-- Hamburger Icon -->
+            </button> 
+        </nav>
 
     </header>
 
@@ -155,7 +161,21 @@
 
         <!-- <div class="line3"></div> -->
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <div class="menu" id="menu">
+        <div class="menu-nav">
+          <a href="#"></a>
+          <button class="close" id="close">&times; <!-- Close Icon --></button>
+        </div>
+       
+        <div class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="works.html">Works</a>
+            <a href="merch.html" class="menu-active" style="color: black;">Merch</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
     <script src="merch.js"></script>
 </body>
 
