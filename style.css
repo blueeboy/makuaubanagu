@@ -35,7 +35,6 @@ nav {
   font-family: var(--font-family);
   height: 20vh;
   margin: 3em 0 0 0;
-  position: sticky;
   z-index: 1;
 }
 
@@ -47,8 +46,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 2em;
-  position: relative;
-  right: 10%;
 }
 
 .links a {
@@ -64,6 +61,12 @@ nav {
   transition: 0.5s ease-in-out;
 }
 
+.active,
+.menu-active {
+  background-color: var(--primary-color);
+  transition: 0.5s ease-in-out;
+}
+
 /* Particles background */
 #particles-js {
   position: fixed;
@@ -72,7 +75,6 @@ nav {
   background-color: #000;
   z-index: 0;
 }
-
 
 .hero {
   display: flex;
@@ -111,6 +113,7 @@ main .about {
   position: relative;
   width: 100%;
   border-bottom: 2px solid var(--text-color);
+  padding: 3em 0em 6em 0em;
 }
 
 main .about p {
@@ -118,8 +121,10 @@ main .about p {
   justify-content: end;
   align-items: center;
   width: 100%;
-  padding: 3em 0em 5em 0em;
+
   font-size: var(--text-font-size-small);
+  text-align: justify;
+  hyphens: auto;
 }
 
 .about img {
@@ -225,7 +230,6 @@ footer {
 
 .footer .left a {
   text-decoration: none;
-  
 }
 
 .footer .left button {
@@ -241,7 +245,7 @@ footer {
 }
 
 .footer .left button:hover {
-  transform: scaleY(1.1)
+  transform: scaleY(1.1);
 }
 
 .footer .right {
@@ -256,36 +260,151 @@ footer {
   padding: 1em 0;
 }
 
+.tracking-in-expand-fwd {
+  animation: tracking-in-expand-fwd 1.2s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
 
-.tracking-in-expand-fwd{animation:tracking-in-expand-fwd 1.2s cubic-bezier(.215,.61,.355,1.000) both}
-
- @keyframes tracking-in-expand-fwd{
-  0%{
-    letter-spacing:-.5em;
-    transform:translateZ(-700px);
-    opacity:0
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
+    opacity: 0;
   }
-    40%{
-      opacity:.6
-    }
-    100%{
-      transform:translateZ(0);opacity:1
-    }
+  40% {
+    opacity: 0.6;
   }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 
+.hamburger {
+  display: none;
+}
 
+.menu {
+  display: none;
+}
 
+.mobile-nav {
+  display: none;
+}
 
-
+@media (max-width: 1024px) {
+}
 
 @media (max-width: 768px) {
- 
   header {
     padding: 0 3em;
   }
 
-  .active {
+  nav {
     display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  .hamburger {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 0em;
+    z-index: 1;
+  }
+
+  /* Menu Styles */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100%;
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-radius: 20px;
+    z-index: 10;
+  }
+  .menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .close {
+    font-size: 2.5rem;
+    background: none;
+    color: var(--secondary-color);
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  .menu img {
+    width: 100px;
+    display: block;
+  }
+
+  .menu-links {
+    list-style: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    gap: 3em;
+  }
+
+  .menu-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+  }
+
+  .sub-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    gap: 0.5em;
+  }
+
+  .menu-links a:hover {
+ 
+  }
+
+  /* Show menu when active */
+  .show {
+    right: 0;
+  }
+
+  .menu-active {
+    border-radius: 10px;
+    
   }
 
   .logo img {
@@ -294,7 +413,7 @@ footer {
 
   .links {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
     position: relative;
     right: 0%;
   }
@@ -310,7 +429,7 @@ footer {
     z-index: 1;
     font-size: clamp(2em, 5vw, 5em);
   }
-  
+
   .hero h1 {
     width: 100%;
     text-align: center;
@@ -342,7 +461,6 @@ footer {
     padding: 0em 0em 5em 0em;
     font-size: var(--text-font-size-small);
   }
-  
 
   .list {
     display: grid;
