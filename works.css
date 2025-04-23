@@ -79,7 +79,7 @@ nav {
 .work {
   margin: 12em 6em 0 6em;
   position: relative;
-  border-top: 2px solid var(--text-color);
+  border-top: 4px solid var(--text-color);
   padding: 3em 0;
 }
 
@@ -123,8 +123,8 @@ nav {
   align-items: center;
   position: relative;
   gap: 3em;
-  border-top: 2px solid var(--text-color);
-  border-bottom: 2px solid var(--text-color);
+  border-top: 4px solid var(--text-color);
+  border-bottom: 4px solid var(--text-color);
 }
 
 .footer .left {
@@ -167,11 +167,15 @@ nav {
   flex-direction: column;
 }
 
+.footer .right ul li {
+  list-style: none;
+  border-bottom: 1px solid #333;
+  padding: 1em 0;
+}
+
 .footer .right a {
   color: var(--text-color);
   font-size: var(--text-font-size-small);
-  border-bottom: 1px solid #333;
-  padding: 1em 0;
 }
 
 .hamburger {
@@ -331,7 +335,7 @@ nav {
     align-items: center;
     position: relative;
     gap: 3em;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 4px solid var(--text-color);
   }
 }
 
@@ -361,7 +365,7 @@ nav {
     align-items: center;
     position: relative;
     gap: 3em;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 4px solid var(--text-color);
   }
 }
 

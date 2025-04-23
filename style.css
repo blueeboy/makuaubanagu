@@ -28,19 +28,26 @@ header {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 15% 85%;
   align-items: center;
 }
 
-nav {
+#navbar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-family);
   height: 20vh;
-  padding: 3em 0 0 0;
+  padding: 1em 0 1em 0;
   z-index: 1;
   background-color: var(--primary-color);
+}
+
+#navbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none; /* optional for click-through */
 }
 
 .logo img {
@@ -96,7 +103,7 @@ nav {
   text-align: center;
   letter-spacing: -5px;
   line-height: 1;
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 4px solid var(--text-color);
   padding: 2em 0;
   z-index: 2;
 }
@@ -116,7 +123,7 @@ main {
   align-items: center;
   position: relative;
   width: 100%;
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 4px solid var(--text-color);
   padding: 3em 0em 6em 0em;
 }
 
@@ -126,6 +133,7 @@ main {
   object-fit: cover;
   border-radius: 20px;
   margin: 0 auto;
+  box-shadow: 8px 8px 0 #000;
 }
 
 main .about p {
@@ -163,8 +171,8 @@ main .about p {
 .work {
   position: relative;
   padding: 8em 0em;
-  border-top: 2px solid var(--text-color);
-  border-bottom: 2px solid var(--text-color);
+  border-top: 4px solid var(--text-color);
+  border-bottom: 4px solid var(--text-color);
 }
 
 .work h1 {
@@ -177,6 +185,7 @@ main .about p {
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   padding-top: 3em;
+  perspective: 500px;
 }
 
 .card {
@@ -189,6 +198,10 @@ main .about p {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .5s;
 }
 
 .card-1 {
@@ -202,6 +215,7 @@ main .about p {
 .card-3 {
   background-image: url(images/social.jpg);
   background-size: cover;
+  text-align: end;
 }
 .card-4 {
   background-image: url(images/journalism.jpg);
@@ -209,12 +223,33 @@ main .about p {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  transition: all 0.3s ease-in-out;
+  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
 }
+
 
 .card a {
   color: var(--text-color);
+}
+
+/* From Uiverse.io by Cornerstone-04 */ 
+
+
+.card_title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition: transform .5s;
+  font: 700 2.5rem monospace;
+  text-shadow: -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.card:hover .card_title {
+  transform: translateZ(50px);
 }
 
 .footer {
@@ -226,7 +261,7 @@ main .about p {
   align-items: center;
   position: relative;
   gap: 3em;
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 4px solid var(--text-color);
 }
 
 .footer .left {
@@ -269,11 +304,15 @@ main .about p {
   flex-direction: column;
 }
 
+.footer .right ul li {
+  list-style: none;
+  border-bottom: 1px solid #333;
+  padding: 1em 0;
+}
+
 .footer .right a {
   color: var(--text-color);
   font-size: var(--text-font-size-small);
-  border-bottom: 1px solid #333;
-  padding: 1em 0;
 }
 
 .tracking-in-expand-fwd {
@@ -473,7 +512,7 @@ main .about p {
     text-align: center;
     letter-spacing: -5px;
     line-height: 1;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 4px solid var(--text-color);
     padding: 4em 0;
     z-index: 2;
   }
@@ -507,7 +546,7 @@ main .about p {
     align-items: center;
     position: relative;
     gap: 3em;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 4px solid var(--text-color);
   }
 }
 
@@ -561,6 +600,6 @@ main .about p {
     align-items: center;
     position: relative;
     gap: 3em;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 4px solid var(--text-color);
   }
 }
