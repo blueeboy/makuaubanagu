@@ -18,6 +18,20 @@ close.addEventListener('click', () => {
 });
 
 
+// Close the menu when a link is clicked
+menuBar.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBar.classList.remove('show');
+  });
+});
+
+// Close the menu when clicking outside of it
+document.addEventListener('click', (event) => {
+  const isClickInside = menuBar.contains(event.target) || hamburger.contains(event.target);
+  if (!isClickInside) {
+    menuBar.classList.remove('show');
+  }
+});
 
 
 

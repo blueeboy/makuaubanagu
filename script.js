@@ -17,23 +17,21 @@ close.addEventListener('click', () => {
   menuBar.classList.remove('show');
 });
 
-
-
-const navbar = document.getElementById('navbar');
-let scrollTimeout = null;
-
-window.addEventListener('scroll', () => {
-  // Hide navbar while scrolling
-  navbar.classList.add('hidden');
-
-  // Clear previous timeout
-  clearTimeout(scrollTimeout);
-
-  // Set a timeout to show the navbar after scrolling stops
-  scrollTimeout = setTimeout(() => {
-    navbar.classList.remove('hidden');
-  }, 200); // Adjust delay here if needed
+// Close the menu when a link is clicked
+menuBar.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBar.classList.remove('show');
+  });
 });
+
+// Close the menu when clicking outside of it
+document.addEventListener('click', (event) => {
+  const isClickInside = menuBar.contains(event.target) || hamburger.contains(event.target);
+  if (!isClickInside) {
+    menuBar.classList.remove('show');
+  }
+});
+
 
 
 
