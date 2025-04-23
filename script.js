@@ -1,3 +1,12 @@
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    const section = document.querySelector(window.location.hash);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+
 
 // Select DOM elements
 const hamburger = document.querySelector('.hamburger');

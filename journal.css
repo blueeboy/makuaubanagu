@@ -221,12 +221,6 @@
   }
   
   @media (max-width: 1024px) {
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2em;
-      margin-top: 2em;
-    }
   }
   
   @media (max-width: 768px) {
@@ -354,6 +348,14 @@
       grid-template-columns: 1fr;
       gap: 2em;
       margin-top: 2em;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      gap: 5em;
     }
   
     .footer {
