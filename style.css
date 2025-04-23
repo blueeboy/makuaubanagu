@@ -32,7 +32,7 @@ header {
   align-items: center;
 }
 
-#navbar {
+nav {
   transition: transform 0.3s ease, opacity 0.3s ease;
   display: flex;
   justify-content: space-between;
